@@ -1,0 +1,12 @@
+transformers==4.21.1
+torch==1.12.1
+#tensorflow >= 1.11.0, <2.0   # CPU Version of TensorFlow.
+tensorflow-gpu== 1.15
+datasets==2.4.0
+pyarabic==0.6.15
+farasapy==0.0.14
+sentencepiece==0.1.96
+fuzzysearch==0.7.3
+emoji==1.4.2
+pre-commit
+
