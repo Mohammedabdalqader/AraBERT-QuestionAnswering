@@ -46,6 +46,7 @@ As an annotation tool for the Question Answering System I recommend Haystack fro
 ### Clone das Repo
 
 	git clone https://github.com/Mohammedabdalqader/AraElectra-QuestionAnswering.git
+	cd AraElectra-QuestionAnswering
 
 
 ### Create Conda Environment (Recommended)
