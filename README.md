@@ -75,6 +75,10 @@ Now you need to run this line:
 
     git lfs install
 
+### Download pretrained AraElectra Model which trained on SQuAD & arcd datasets
+
+You can download the model from here: https://drive.google.com/file/d/1-l2-rNnui7UulEEdUdG-POSbKyNb6DHk/view?usp=sharing
+The model must be saved in araelectra-QA-model/
 
 ### Run the Flask app
 
