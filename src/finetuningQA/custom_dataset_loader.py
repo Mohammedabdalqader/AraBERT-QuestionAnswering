@@ -28,8 +28,8 @@ _DESCRIPTION = """\
 
 _URL = "../../dataset/question-answering-dataset/"
 _URLs = {
-    "train": _URL + "iskan_dev_preprocessed.json",
-    "dev": _URL + "iskan_dev_preprocessed.json",
+    "train": _URL + "turk_combined_all_preprocessed.json",
+    "dev": _URL + "arcd-test_preprocessed.json",
 }
 
 

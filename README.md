@@ -1,17 +1,23 @@
-# Pretraining/Finetuning AraBERTv2 :blush:
+[//]: # (Image References)
 
-In this repository, I show how to pre-train the AraBERT model on a specific domain and then how to use it for downstream tasks, such as question answering system. There are 2 notebooks:
+[postman-ask]: postman/postman-ask.png "ask"
+[postman-upload]: postman/postman-upload.png "upload"
 
-1- Pretrain_AraBERTv2.ipynb
 
-used to pretrain the AraBERT model on a user-defined dataset. In this notebook, the dataset is first prepared for training in the expected format and then the pretraining can be started. At the end of the training process, you can convert the Tensorflow checkpoint to a Pytorch model and store it in a suitable
-location namly: "bert-base-arabertv2/" to be used later for fine-tuning this model on a question answering system. 
+# Pretraining/Finetuning AraElectra :blush:
+
+In this repository, I show how to pre-train the AraElectra model on a specific domain and then how to use it for downstream tasks, such as question answering system. There are 2 notebooks:
+
+1- Pretrain_AraElectra.ipynb
+
+used to pretrain the AraElectra model on a user-defined dataset. In this notebook, the dataset is first prepared for training in the expected format and then the pretraining can be started. At the end of the training process, you can convert the Tensorflow checkpoint to a Pytorch model and store it in a suitable
+location namly: "araelectra-base-discriminator/" to be used later for fine-tuning this model on a question answering system. 
 
 The expexted dataset structure is a text-file in which each line represent a single sentence ends with '.' and between the paragraphs there is an empty line. An example for the dataset will be found in dataset/pretraining-dataset/iskan.txt.
 
-2- Finetune-AraBERTv2-QA.ipynb
+2- Finetune-AraElectra-QA.ipynb
 
-Through this notebook you can fine-tune the AraBERT model for a question-answer system. This notebook contains all the necessary processes from preparing the dataset to performing the inference. The dataset must be in this format:
+Through this notebook you can fine-tune the AraElectra model for a question-answer system. This notebook contains all the necessary processes from preparing the dataset to performing the inference. The dataset must be in this format:
 
 ```
 QA_data.json
@@ -69,8 +75,20 @@ Now you need to run this line:
     git lfs install
 
 
+### Run the Flask app
+
+    gunicorn -k gevent -b 0.0.0.0:8080 app.api.routes:app -t 300
+
+### Use Postman to ask questions and upload new dokuments
+
+- asking question endpoint: http://0.0.0.0:8080/ask
+  ![ask][postman-ask]
+- upload new documents (.txt) endpoint: http://0.0.0.0:8080/upload_new_document
+  ![upload][postman-upload]
+
+
 ### References
 
- 1- AraBERT: https://github.com/aub-mind/arabert                                                                 
- 2- BERT: https://github.com/google-research/bert
+ - AraBERT: https://github.com/aub-mind/arabert                                                                 
+ - BERT: https://github.com/google-research/bert
 
